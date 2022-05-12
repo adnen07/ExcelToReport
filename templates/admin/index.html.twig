@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Admin !{% endblock %}
+{% block stylesheets %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+{% endblock %}
+{% block body %}
+
+<br>
+
+<div class="example-wrapper">
+
+
+
+        <span><h2>Welcome Admin </h2> <span>{{ app.user.email }} </span></span><br>
+
+        <h4 style="margin-top:15px;color:#0000FF"><a href="{{ path('uploadreport') }}">Send a report</a></h4>
+
+
+
+{% endblock %}

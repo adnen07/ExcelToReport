@@ -1,0 +1,64 @@
+<div >
+    <h2>Month's Profit Repo</h2>
+    <h5>Dear {{ firstname }}  {{ lastname }}</h5>
+    <h3>Here's your monthly report!</h3>
+    <center>
+            <table style="margin-bottom: 40px">
+                <thead>
+                <th>Client first name</th>
+                <th>Client last name</th>
+                <th>Client email</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{ firstname }}</td>
+                    <td>{{ lastname }}</td>
+                    <td>{{ useremail }}</td>
+                </tr>
+                </tbody>
+            </table>
+            <img style="height:220px;width:400px;" src="{{ image1 }}" />
+            <h3>Total comission achieved</h3>
+        </center>
+    <br>
+    <hr>
+    <h3>Total Profit Amount per Module</h3>
+        <center>
+            <img style="height:220px;width:400px;" src="{{ image2 }}" />
+        </center>
+    <h3>Commission Achieved Details </h3>
+    <hr>
+    <center>
+    <table>
+        <thead>
+        {% for head in tablehead1 %}
+            <th>{{ head }}</th>
+        {% endfor %}
+
+
+        </thead>
+        <tbody>
+        <tr>
+        {% for data in tabledata1 %}
+            {% if loop.index0 % 6 == 0  %}
+        </tr>
+        <tr>
+            {% endif %}
+            <td>{{ data }}</td>
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+    </center>
+</div>
+<style>
+    table{
+        border: 1px solid #0d0d0d;
+    }
+    thead{
+        background-color: #999999;
+    }
+    tbody{
+        background-color:#DDDDDD;
+    }
+</style>

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReportController!{% endblock %}
+
+{% block body %}
+   {{ form(form ) }}
+   <style>
+      form{
+         display: flex;
+         flex-wrap: wrap;
+         flex-direction: column;
+         align-content: space-around;
+         justify-content: space-evenly;
+         align-items: flex-start;
+         margin-top: 50px;
+      }
+      label{
+         display: none;
+      }
+   </style>
+{% endblock %}

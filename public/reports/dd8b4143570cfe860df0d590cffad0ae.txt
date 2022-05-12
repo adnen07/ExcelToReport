@@ -1,0 +1,56 @@
+---------------------------Annotation---------------
+au dessous de chaque attribue il faut ajouter l'annotation suivant :
+clé primare : 
+[Key]
+
+Date valide :
+[DataType(DataType.DateTime)]
+
+password:
+[DataType(DataType.Password)]
+
+--------------------Association Fluent API----------------------------
+Exemple 1:
+
+Condidat *------------*Formation 
+
+Code: 
+ classe formation :
+Public virtual IListe<Condidat> Candidats {get; set;}
+
+ classe Condidat :
+Public virtual IListe<Formation> Formations {get; set;}
+
+Exemple2
+Formation * ----------1 Formateur
+
+Code:
+ classe formation :
+Public virtual Formteur Formateur {get; set;}
+
+ classe formateur :
+Public virtual IListe<Formation> Formations {get; set;}
+
+sur le fichier de configuration de base de données : (relation many to many)
+ modelBuilder.Entity<Candidat>().HasMany(c => c.Formations).WithMany(f => f.Candidats).UsingEntity(p => p.ToTable("Participation"));
+
+
+---------------------regroupement de deux attribues-----------------------
+1/ creation de classe NomComplet
+2/ Ajouter au dessous de classe main [Owned]
+3/ au niveau de classe main, déclrarer les deux attribues.
+4/ puis dans la classe principale ecrire un methode public de type Nom de classe crée 
+public NomComplet NomPrenom {get; set;}
+
+
+http://localhost:63382/Formation/Create
+
+add-migration firstmigration
+update-database
+
+
+Conntrollerr
+Ajouter
+nv elemenet
+controleer mvc r/w
+

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+{% block stylesheets %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+{% endblock %}
+{% block body %}
+
+<br>
+
+<div class="example-wrapper">
+
+    {%  if is_granted('ROLE_USER') %}
+
+            <span><h2>Welcome </h2> <span>{{ app.user.email }} </span></span><br>
+            <span>This is a simple page !!</span>
+    {% endif %}
+
+        {%  if is_granted('ROLE_ADMIN') %}
+            <h4 style="margin-top:15px;color:#0000FF"><a href="{{ path('uploadreport')}}">Send a report</a></h4>
+            {% endif %}
+
+
+
+
+
+</div>
+{% endblock %}
